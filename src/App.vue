@@ -3,6 +3,8 @@
     <div id="contact" style="z-index:15 ;width: 100%; display: flex; justify-content: end;">
       <a href="https://www.linkedin.com/in/ramon-larcher-b50806270/" style="font-family: monospace;transition: text-shadow 0.3s ease;text-decoration: none ;font-size: 20px ; padding-right:10px ;color: white; text-shadow:0px 0px 3px rgba(255, 255, 53, 1); ">Contact</a>
     </div>
+    <div id="particles-js2" style="z-index: 6; position: absolute; width: 100%; height: 100vh"></div>
+
     <div id="div-topo" style="display: flex; flex-direction: row; align-items: center;justify-content: center;"> 
       <h1 id="titulo">
         <span id="hated">Hated </span>
@@ -15,13 +17,15 @@
       </div>
     </div>
 
-    <div id="first-text" style="display: flex; flex-direction: column; height: 100vh; align-items: center;">
-      <p style="color:white;">Hated in the Nation " é o sexto e último episódio da terceira temporada da série antológica britânica de ficção científica Black Mirror . Escrito pelo criador e showrunner da série Charlie Brooker e dirigido por James Hawes , estreou na Netflix em 21 de outubro de 2016, junto com o restante da terceira série. É o episódio mais longo de Black Mirror , com 89 minutos.Um episódio de inspiração nórdica noir ,<span style="background-color:rgb(157 157 39); color: black; "> "Hated in the Nation" segue os detetives Karin Parke ( Kelly Macdonald ) e Blue Coulson ( Faye Marsay ) enquanto eles investigam uma série de mortes visando os sujeitos do ódio nas redes sociais , nas mãos de Insetos Drones Autônomos</span>. (ADIs) que foram implantadas para combater catástrofes ambientais à medida que as abelhas estão próximas da extinção. Foi filmado principalmente em Londres.Baseado na experiência de Brooker ao receber cartas de ódio depois de escrever uma coluna no Guardian em 2004 que menosprezava George W. Bush , o episódio foi comparado com Arquivo X e explorou temas como vigilância governamental e ambientalismo.</p>
-      <div id="particles-js" style="position: absolute; width: 80%; height: 100vh"></div>
-      <div id="bee2" style="display: flex; align-items: center; justify-content: center;">
+    <div id="first-text" style="display: flex; flex-direction: column; height: 100vh; align-items: center; justify-content:center; ">
+      <p id="texto" style="color:white;">Hated in the Nation " é o sexto e último episódio da terceira temporada da série antológica britânica de ficção científica Black Mirror . Escrito pelo criador e showrunner da série Charlie Brooker e dirigido por James Hawes , estreou na Netflix em 21 de outubro de 2016, junto com o restante da terceira série. É o episódio mais longo de Black Mirror , com 89 minutos.Um episódio de inspiração nórdica noir ,<span style="background-color:rgb(157 157 39); color: black; "> "Hated in the Nation" segue os detetives Karin Parke ( Kelly Macdonald ) e Blue Coulson ( Faye Marsay ) enquanto eles investigam uma série de mortes visando os sujeitos do ódio nas redes sociais , nas mãos de Insetos Drones Autônomos</span>. (ADIs) que foram implantadas para combater catástrofes ambientais à medida que as abelhas estão próximas da extinção. Foi filmado principalmente em Londres.Baseado na experiência de Brooker ao receber cartas de ódio depois de escrever uma coluna no Guardian em 2004 que menosprezava George W. Bush , o episódio foi comparado com Arquivo X e explorou temas como vigilância governamental e ambientalismo.</p>
+      <div id="bee2" style="display: flex; align-items: center; justify-content: center; margin-top: 10px; z-index: 10;">
         <div ref="threeContainer2" class="three-container2"></div>
       </div>
+      <div id="particles-js" style="position: absolute; width: 100%; height: 100vh; z-index: 0;"></div>
+
     </div>
+
 
   </div>
 </template>
@@ -39,7 +43,7 @@ export default {
   setup() {
     onMounted(() => {
       nextTick(() => {
-        window.particlesJS('particles-js', {
+        window.particlesJS('particles-js',{
           "particles": {
             "number": {
               "value": 80,
@@ -149,6 +153,118 @@ export default {
           },
           "retina_detect": true
         });
+
+        window.particlesJS('particles-js2',{
+          "particles": {
+            "number": {
+              "value": 80,
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#ffffff"
+            },
+            "shape": {
+              "type": "circle",
+              "stroke": {
+                "width": 0,
+                "color": "#000000"
+              },
+              "polygon": {
+                "nb_sides": 5
+              },
+              "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+              }
+            },
+            "opacity": {
+              "value": 0.5,
+              "random": false,
+              "anim": {
+                "enable": false,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+              }
+            },
+            "size": {
+              "value": 3,
+              "random": true,
+              "anim": {
+                "enable": false,
+                "speed": 40,
+                "size_min": 0.1,
+                "sync": false
+              }
+            },
+            "line_linked": {
+              "enable": true,
+              "distance": 150,
+              "color": "#ffffff",
+              "opacity": 0.4,
+              "width": 1
+            },
+            "move": {
+              "enable": true,
+              "speed": 6,
+              "direction": "none",
+              "random": false,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false,
+              "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+              }
+            }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": {
+                "enable": true,
+                "mode": "repulse"
+              },
+              "onclick": {
+                "enable": true,
+                "mode": "push"
+              },
+              "resize": true
+            },
+            "modes": {
+              "grab": {
+                "distance": 400,
+                "line_linked": {
+                  "opacity": 1
+                }
+              },
+              "bubble": {
+                "distance": 400,
+                "size": 40,
+                "duration": 2,
+                "opacity": 8,
+                "speed": 3
+              },
+              "repulse": {
+                "distance": 200,
+                "duration": 0.4
+              },
+              "push": {
+                "particles_nb": 4
+              },
+              "remove": {
+                "particles_nb": 2
+              }
+            }
+          },
+          "retina_detect": true
+        });
+      
       });
     });
   
@@ -346,7 +462,7 @@ export default {
       easing: 'ease-out',
       mobile: true,
     });
-    sr.reveal('#first-text',{
+    sr.reveal('#texto',{
       duration: 5000,
       dalay:500,
       origin: 'left',
@@ -357,8 +473,7 @@ export default {
     sr.reveal('#bee2',{
       duration: 15000,
       dalay:4000,
-      origin: 'bottom',
-      distance: '800px',
+      origin: 'right',
       easing: 'ease-out',
       mobile: true,
     });
@@ -374,6 +489,8 @@ export default {
 .three-container2 {
   width: 200px;
   height: 200px;
+  display: flex;
+  align-items: center; justify-content:center; 
 }
 #container{
   width: 100%;
@@ -382,7 +499,6 @@ export default {
 }
 #div-topo{
   z-index: 10;
-  background-color: black;
   visibility: hidden;
   height: 100vh;
 }
@@ -392,7 +508,6 @@ export default {
   font-size: 60px;
   color: white;
 }
-
 
 #titulo span {
   text-shadow: 0px 0px 13px rgba(255, 255, 53, 1);
@@ -407,7 +522,6 @@ export default {
 #first-text{
   display: flex;
   z-index: 0;
-  visibility: hidden;
   font-size: 30px;
   padding: 30px;
   align-items: center;
@@ -416,22 +530,6 @@ export default {
 
 #contact>a:hover{
   text-shadow: 0px 0px 20px rgba(255, 255, 53, 1) !important;
-}
-#images>img{
-  width: 300px;
-}
-#images>div{
-  width: 300px;
-  height: 200px;
-}
-#images{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  visibility: hidden;
-  align-items: center;
-  justify-content: center;
 }
 
 
@@ -444,6 +542,9 @@ export default {
   }
   #titulo{
     padding-left: 20px;
+  }
+  #particles-js2{
+    z-index: 0 !important;
   }
 }
 </style>
