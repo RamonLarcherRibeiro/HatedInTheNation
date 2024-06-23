@@ -434,7 +434,7 @@ export default {
     const animateNeon = () => {
       
       //array de spans (palavras) que serao animados(as)
-      const spans = ['hated','nation'];
+      const spans = ['hated'];
 
       setInterval(() => {
           //sortear spans que serao animados
@@ -538,7 +538,10 @@ export default {
     flex-direction: column-reverse !important;
   }
   #first-text{
-    font-size: 20px;
+    font-size: 16px;
+  }
+  #first-text>p{
+    padding-bottom:20px;
   }
   #titulo{
     padding-left: 20px;
